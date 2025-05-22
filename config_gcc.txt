@@ -1,0 +1,9 @@
+- gcc (compilateuer) GNU C compilateuer
+- std=99 (version de C utlisé)
+- pedantic (on suivra la norme ISO C pour les bonnes pratiques à suivre)
+- Wall (Warning all on activera tous les warnings)
+- Wextra (Warning en Extra pour plus de warning pour forcé la bonne pratique)
+- Werror (Warning error pour dire que chaque warning est une erreur donc le code s'arretera)
+- main.c (nom de notre fichier C)
+- (-o) output 
+- main.exe (le programme compilé)

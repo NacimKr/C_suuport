@@ -1,0 +1,69 @@
+--------- ETAPE 1 
+Preprocessing fait par le programme cpp (Voir man cpp sur Linux)
+C'est prendre le code du preprocesseur en langage C et le transformer en langage C
+
+
+--------- ETAPE 2
+Compilation fait par le programme gcc (cc est le container de cpp) (le vrai compilateur de Linux)
+GCC va prendre le fihcier source écrit en C et le transformer en fichier assembly (assembleur)
+pour que l'assembleur l'assemble en un fichier objet
+
+
+--------- ETAPE 3
+Assembleur (gcc va appeler as) (voir AS sur Linux)
+le fichier as va recuperer le fichier assembly fait à l'étape précédent puis le
+transformer en un fichier objet (c'est à dire un fichier avec du code machine avec des sections)
+
+
+------- ETAPE 4
+Le Linking (voir ld sous linux)
+Il prend le ou les fichiers objets et les réunir en fichier éxécutable
+
+
+
+
+
+---------------------------- VERSION COMMANDE ETAPE COMPILATON ----------------------------
+---1/ PREPROCESSEUR
+gcc (on appelle le preprocessing) -E main.c(nom du fichier écrit en C) -o (pour dire output) main.
+
+COMMANDE : gcc -E main.c -o main.i
+AVEC CETTE COMMANDE CI-DESSUS ON AURA UN CODE C PREPROCESSER QUI VA POUVOIR ETRE COMPILÉ
+
+ 
+---2/ COMPILATION
+Ensuite on recupère le fichier préprocesser en C puis on le sort en assembly 
+COMMANDE : gcc -S main.i -o main.s (ou .asm mais utliser le .s pour l'etape suivante)
+
+
+---3/ ASSEMBLEUR
+Une fois la conversion du fichier C en assembleur faites en le convertis en fichier objet
+gcc -C main.s -o main.o
+main.o sera écrit en langage machine impossible à lire .
+Des outils existe comme :
+- (nm -T main.o) sous Linux, nm pour lister les symboles fichier (.c, .exe etc.)
+- (objdump -d main.o) 
+- (objdump -D main.o) pour plus de details objdump -D 
+pour convertir un fichier en code assembly (des fichier .c, .exe, etc.)
+
+
+---4/
+On recupère notre fichier objet et on le convertis en éxécutable
+gcc main.o -o main.exe
+
+
+
+
+
+
+
+--------------------------------------RECAPITULATIF--------------------------------------
+main.C => C source ASCII text
+main.i => C source ASCII text (st généralement un fichier INTERMEDIAIRE généré lors de la compilation de programmes en C ou C++, est un outil utile pour les développeurs qui veulent comprendre comment leur code source est transformé avant la compilation proprement dite.)
+main.o => ELF (Executable Linkable Format fichier pour Linux) qui est relocatable (relocatable symbole qui sont dedans sont relocalisedans un executable)
+main.s => assembler source ASCII text
+main.exe => ELF (Executable Linkable Format fichier pour Linux) qui est executable
+
+
+IL EST POSSIBLE LORS DE LA COMPIATION D'AVOIR TOUS CES FICHIERS D"UN compilateuer
+COMMANDE : gcc -save-temps main.c -o main.exe

@@ -1,0 +1,12 @@
+https://www.msys2.org/
+pacman -S mingw-w64-x86_64-gcc 
+pacman -S mingw-w64-x86_64-gdb
+
+Configuration variables environnement
+
+OU 
+sur 
+
+https://sourceforge.net/projects/mingw/
+et choisir c++ - base et gcc-object-c
+Installation Apply changes
