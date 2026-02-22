@@ -14,7 +14,16 @@ int main(int argc, char *argv[], char *env[]){
 
   //variable environnment en parametre facultatif
   puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
+  puts(env[0]);
 
+  printf("test testtest");
   // short num_short = 42;
   // printf("num = %d", num_short);
   return 0;
