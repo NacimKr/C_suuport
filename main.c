@@ -26,5 +26,8 @@ int main(int argc, char *argv[], char *env[]){
   printf("test testtest");
   // short num_short = 42;
   // printf("num = %d", num_short);
+  
+    //PULL REQUEST 2
+  puts(env[0]);
   return 0;
 }  
